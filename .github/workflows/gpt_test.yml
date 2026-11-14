@@ -26,6 +26,5 @@ jobs:
 
     - name: 4. 运行 GPT 脚本
       env:
-        # 🌟 核心：把 GitHub 自动生成的通行证传给代码
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        GH_PAT: ${{ secrets.GH_PAT }}
       run: python test_gpt.py
