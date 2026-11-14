@@ -26,5 +26,5 @@ jobs:
 
     - name: 4. 运行 GPT 脚本
       env:
-        MY_PAT: ${{ secrets.GH_PAT }} # 🌟 用 MY_PAT 避开系统冲突
+        OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
       run: python test_gpt.py
