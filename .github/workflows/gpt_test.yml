@@ -26,5 +26,5 @@ jobs:
 
     - name: 4. 运行 GPT 脚本
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        MY_PAT: ${{ secrets.GH_PAT }} # 🌟 用 MY_PAT 避开系统冲突
       run: python test_gpt.py

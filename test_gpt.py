@@ -2,9 +2,13 @@ import os
 from openai import OpenAI
 
 # GitHub Actions 运行时会自动注入 GITHUB_TOKEN 环境变量
-token = os.environ.get("GITHUB_TOKEN")
-if not token:
-    print("❌ 找不到 GITHUB_TOKEN，请在 YAML 里配置。")
+token = os.environ.get("MY_PAT")
+
+# 加一行打印，让你在 Actions 里能一眼看到底有没有拿到真的密码
+if token:
+    print(f"✅ 成功拿到 Token，长度: {len(token)}，开头是: {token[:4]}")
+else:
+    print("❌ 没拿到 Token，请检查 Secrets 配置！")
     exit(1)
 
 # 连接到微软提供的 GitHub Models
