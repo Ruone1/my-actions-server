@@ -13,12 +13,11 @@ client = OpenAI(
     api_key=token
 )
 
-print("⏳ 正在呼叫海外顶尖大模型...")
+print("⏳ 正在呼叫海外顶尖大模型 (Llama 3)...")
 
 try:
     response = client.chat.completions.create(
-        # 🌟 这里用的是 Google Gemini 的免费版本，极度聪明且免费
-        model="google/gemini-flash-1.5:free", 
+        model="meta-llama/llama-3.1-8b-instruct:free", 
         messages=[{"role": "user", "content": "请用一句话证明你已经在微软的云端服务器上苏醒了！"}]
     )
     print("\n🤖 AI 的回答：")
