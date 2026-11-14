@@ -17,7 +17,7 @@ print("⏳ 正在呼叫海外顶尖大模型 (Llama 3)...")
 
 try:
     response = client.chat.completions.create(
-        model="google/gemini-flash-1.5:free",  
+        model="google/gemma-4-31b-it:freev",  
         messages=[{"role": "user", "content": "请用一句话证明你已经在微软的云端服务器上苏醒了！"}]
     )
     print("\n🤖 AI 的回答：")
