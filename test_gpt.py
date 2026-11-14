@@ -2,7 +2,7 @@ import os
 from openai import OpenAI
 
 # GitHub Actions 运行时会自动注入 GITHUB_TOKEN 环境变量
-token = os.environ.get("GITHUB_TOKEN")
+token = os.environ.get("GH_PAT")
 if not token:
     print("❌ 找不到 GITHUB_TOKEN，请在 YAML 里配置。")
     exit(1)
